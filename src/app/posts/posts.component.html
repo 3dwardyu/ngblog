@@ -1,1 +1,9 @@
-<h1>test<
+<div class="container">
+    <div class="row" *ngFor="let post of posts">
+        <div class="card card-block">
+            <h4 class="card-title">{{post.title}}</h4>
+            <p class="card-text">{{ post.content }} </p>
+            <p>{{post.author}}</p>
+        </div>
+    </div>
+</div>
