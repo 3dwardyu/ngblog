@@ -8,7 +8,19 @@ var blogSchema = new Schema ({
     comments: [{ body: String, date: Date }],
     date: { type: Date, default: Date.new },
     hidden: Boolean,
+    created_at: Date,
+    updated_at: Date
 
 });
 
-module.exports = mongoose.model('Blog', schema);
+blogSchema.pre('save', function(next){
+    var currentDate = new Date();
+    this.updated_at = currentDate;
+
+    if(!this.created_at)
+        this.created_at = currentDate;
+
+        next();
+});
+
+module.exports = mongoose.model('Blog', blogSchema);
