@@ -3,11 +3,13 @@ var express = require('express');
 var path = require('path');
 var http = require('http');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 // Get our API routes
 var blog = require('./server/routes/blog');
 
 var app = express();
+mongoose.connect('localhost:27017/ngblog');
 
 // Parsers for POST data
 app.use(bodyParser.json());
