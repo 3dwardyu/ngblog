@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
+import { routing } from './app.routing';
+import { PostsService } from './posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { PostsComponent } from './posts/posts.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
