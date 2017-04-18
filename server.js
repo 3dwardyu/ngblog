@@ -5,20 +5,20 @@ var http = require('http');
 var bodyParser = require('body-parser');
 
 // Get our API routes
-var api = require('./server/routes/api');
+var blog = require('./server/routes/blog');
 
 var app = express();
 
 // Parsers for POST data
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extension: false}));
+app.use(bodyParser.urlencoded({ extended: false}));
 
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
-app.use('/api', api);
+app.use('/blog', blog);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
