@@ -6,10 +6,10 @@ var blogSchema = new Schema ({
     author: String,
     content: { type: String, required: true},
     comments: [{ body: String, date: Date }],
-    date: { type: Date, default: Date.new },
-    hidden: Boolean,
-    created_at: Date,
-    updated_at: Date
+    created_at: { type: Date, default: Date.new },
+    updated_at: Date,
+    hidden: Boolean
+
 
 });
 
