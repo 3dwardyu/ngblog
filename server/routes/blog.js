@@ -9,9 +9,12 @@ router.get('/posts', (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            res.status(200).json(blogs);
+            res.status(200).json({
+                message: 'Success',
+                obj: blogs
+            });
         }
-    });
+        });
 });
 
 module.exports = router;

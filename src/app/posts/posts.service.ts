@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/Rx';
+import { Observable } from 'rxjs';
 
 import { Post } from './post.model';
 
@@ -12,22 +13,9 @@ export class PostsService {
 
     }
     getPosts(){
-        return this.http.get('/blog/posts')
-        .map((res: Response) => {
-            const posts = res.json().obj;
-            let transformedPosts: Post[] = [];
-            for (let post of posts) {
-                transformedPosts.push(new Post(
-                    post.title,
-                    post.content,
-                    post.author,
-                    post.userId,
-                    post.postId)
-                );
-            }
-            this.posts = transformedPosts;
-            return transformedPosts; 
-    })
+        return this.http.get('http://localhost:4200/blog/posts')
+        .map(res => res.json());
+    
     }
 
     addPost(){

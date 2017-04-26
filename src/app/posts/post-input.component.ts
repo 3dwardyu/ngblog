@@ -16,13 +16,7 @@ export class PostInputComponent {
 
     constructor(private postsService: PostsService){}
 
-    onSubmit(form: NgForm) {
-        const post = new Post(form.value.title, form.value.content, 'Ed');
-        this.postsService.addPost(post)
-        .subscribe(
-            data => console.log(data),
-        );
-    }
+
     }
 
 
