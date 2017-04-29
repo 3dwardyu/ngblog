@@ -14,7 +14,19 @@ export class PostsService {
     }
     getPosts(){
         return this.http.get('http://localhost:4200/blog/posts')
-        .map(res => res.json());
+        .map((response: Response) => {
+            const posts = response.json().obj;
+            let transformedPosts: Post[] = [];
+            for (let post of posts) {
+                transformedPosts.push(new Post(
+                    post.title,
+                    post.content,
+                    post.author)
+                );
+            }
+            this.posts = transformedPosts;
+            return transformedPosts; 
+    })
     
     }
 
