@@ -21,7 +21,8 @@ export class PostsService {
                 transformedPosts.push(new Post(
                     post.title,
                     post.content,
-                    post.author)
+                    post.author,
+                    post.created_at)
                 );
             }
             this.posts = transformedPosts;
