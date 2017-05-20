@@ -1,6 +1,6 @@
 <div class="card text-center">
     <div class="card-block"
-    *ngIf="post"> 
+        *ngIf="post"> 
         <h4 class="card-title">{{ post.title }}</h4>
         <p class="card-text">{{ post.content }}</p>
         <p> {{ post.author }}</p>
@@ -8,5 +8,4 @@
     <div class="card-footer text-muted">
         {{ post.created_at | date: "MM/dd/yy" }}
     </div>
-
 </div>

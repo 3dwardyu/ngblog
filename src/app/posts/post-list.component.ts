@@ -21,10 +21,4 @@ export class PostListComponent implements OnInit {
                 }
             );
     }
-
-    goToPost(post: Post): void {
-        let link = ['/posts', post.id];
-        this.router.navigate(link);
-    }
-
 }

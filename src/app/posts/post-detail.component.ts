@@ -13,9 +13,8 @@ import { PostsService } from './posts.service';
 
 export class PostDetailComponent implements OnInit {
 
-    constructor(
-                private route: ActivatedRoute) {
-                }
+    constructor(private route: ActivatedRoute) {
+    }
     
     @Input()
     post: Post;
