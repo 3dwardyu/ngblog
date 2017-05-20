@@ -20,11 +20,7 @@ export class PostDetailComponent implements OnInit {
     @Input()
     post: Post;
 
-    ngOnInit(): void{
-        // let postRequest = this.route.params
-        //     .flatMap((params: Params) =>
-        //     this.postsService.getPost(params['id']));
-        //     postRequest.subscribe(res => this.post);
+    ngOnInit(){
         this.post = this.route.snapshot.data['post'];
     }
 }
