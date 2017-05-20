@@ -9,12 +9,19 @@ router.get('/posts', (req, res) => {
         if(err) {
             res.send(err);
         } else {
-            res.status(200).json({
-                message: 'Success',
-                obj: blogs
-            });
+            res.status(200).json(blogs);
         }
-        });
+    });
 });
+
+router.get('/posts/:id', (req, res) =>{
+    Blog.findById(req.params.id, function(err, blog) {
+        if(err) {
+            res.send(err);
+        } else {
+            res.status(200).json(blog);
+        }   
+    });
+})
 
 module.exports = router;

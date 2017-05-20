@@ -8,7 +8,8 @@ var blogSchema = new Schema ({
     comments: [{ body: String, date: Date }],
     created_at: { type: Date, default: Date.new },
     updated_at: Date,
-    hidden: Boolean
+    hidden: Boolean,
+
 
 
 });

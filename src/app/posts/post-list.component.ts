@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from "./post.model";
 import { PostsService } from "./posts.service";
 
@@ -11,7 +11,7 @@ import { PostsService } from "./posts.service";
 export class PostListComponent implements OnInit {
     posts: Post[];
 
-    constructor(private postService: PostsService) {}
+    constructor(private postService: PostsService, private router: Router) {}
 
     ngOnInit() {
         this.postService.getPosts()
@@ -21,4 +21,10 @@ export class PostListComponent implements OnInit {
                 }
             );
     }
+
+    goToPost(post: Post): void {
+        let link = ['/posts', post.id];
+        this.router.navigate(link);
+    }
+
 }
