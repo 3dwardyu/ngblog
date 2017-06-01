@@ -2,10 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from "./post.model";
 import { PostsService } from "./posts.service";
+import { Observable } from 'rxjs/Rx';
 
 @Component({
     selector: 'app-post-list',
-    templateUrl: 'post-list.component.html'
+    templateUrl: 'post-list.component.html',
+    providers: [ PostsService ]
 })
 
 export class PostListComponent implements OnInit {
@@ -13,10 +15,10 @@ export class PostListComponent implements OnInit {
 
     constructor(private postService: PostsService, private router: Router) {}
 
-    ngOnInit() {
+    ngOnInit(){
         this.postService.getPosts()
             .subscribe(
-                (posts: Post[]) => {
+                posts => {
                     this.posts = posts;
                 }
             );

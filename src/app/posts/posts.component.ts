@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Post } from './post.model';
 
 @Component({
     selector: 'app-posts',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class PostsComponent { 
-    constructor(){ }
-    ngOnInit(){
 
-    }
+    constructor(){
+     }
+
 }

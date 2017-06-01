@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { HeaderComponent } from './header.component';
 import { routing } from './app.routing';
 import { PostsService } from './posts/posts.service';
 import { PostResolve } from './posts/post.resolve';
+import { PostAddComponent } from './posts/post-add.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,14 @@ import { PostResolve } from './posts/post.resolve';
     HeaderComponent,
     PostDetailComponent,
     PostListComponent,
-    PostItemComponent
+    PostItemComponent,
+    PostAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     routing
   ],
   providers: [PostsService, PostResolve],

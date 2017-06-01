@@ -4,6 +4,7 @@ var path = require('path');
 var http = require('http');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+mongoose.Promise = Promise;
 mongoose.connect('localhost:27017/ngblog');
 
 // Get our API routes

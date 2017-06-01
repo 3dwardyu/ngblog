@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PostsService } from './posts.service';
 
 import { Post } from './post.model';
 
@@ -7,10 +8,9 @@ import { Post } from './post.model';
     templateUrl: 'post-item.component.html'
 })
 
-export class PostItemComponent implements OnInit{
-    @Input() post: Post;
+export class PostItemComponent {
+
+    @Input() post: Post[];
     @Input() index: number;
 
-    ngOnInit(){
     }
-}
